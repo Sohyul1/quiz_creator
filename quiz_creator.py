@@ -6,7 +6,7 @@ file = open("quiz_questions.txt", "a")
 # Start of loop
 while True:
     # Ask for user input (question)
-    questn = input("\nEnter the question you like: \n")
+    questn = input("\nEnter the question: \n")
 
     # Ask for user input (answer)
     a = input("Letter 'A' value: \n")
@@ -32,7 +32,7 @@ while True:
     file.write("\n")
 
      # Make a loop to keep asking for input
-    again = input("Add another question? (yes/no): \n").strip().lower()
+    again = input("Add another question? [yes/no]: \n").strip().lower()
     if again.startswith("y"):
         continue
     elif again.startswith("n"):
