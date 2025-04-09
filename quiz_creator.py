@@ -6,7 +6,7 @@ file = open("quiz_questions.txt", "a")
 # Start of loop
 while True:
     # Ask for user input (question)
-    questn = input("\nEnter the question: \n")
+    questn = input("\nEnter a question: \n")
 
     # Ask for user input (answer)
     a = input("Letter 'A' value: \n")
@@ -16,11 +16,11 @@ while True:
 
     # Ask the user for the right answer
     while True:
-        right_ans = input("Letter of the right answer (A/B/C/D): \n").strip().upper()
+        right_ans = input("Letter of the right answer [A/B/C/D]: \n").strip().upper()
         if right_ans in ['A', 'B', 'C', 'D']:
             break
         else:
-            print("Invalid input. Please enter A, B, C, or D.")
+            print("Invalid input. Please enter A, B, C, or D.\n")
     
     # Write the collected data into text file
     file.write(f"Question: {questn}\n")
@@ -32,14 +32,14 @@ while True:
     file.write("\n")
 
      # Make a loop to keep asking for input
-    again = input("Add another question? [yes/no]: \n").strip().lower()
+    again = input("Enter another question? [yes/no]: \n").strip().lower()
     if again.startswith("y"):
         continue
     elif again.startswith("n"):
-        print("Quiz creation completed!")
+        print("Quiz creation completed!\n")
         break
     else:
-        print("Invalid input. Please type a response that starts with 'y' (yes) or 'n' (no).")
+        print("Invalid input. Please type a response that starts with 'y' (yes) or 'n' (no).\n")
 
 # Close the file once done
 file.close()
