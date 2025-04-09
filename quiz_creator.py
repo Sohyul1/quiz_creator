@@ -15,13 +15,14 @@ while True:
     d = input("Letter 'D' value: \n")
 
     # Ask the user for the right answer
-    right_ans = input("Letter 0f the right answer (A/B/C/D): \n")
+    right_ans = input("Letter of the right answer (A/B/C/D): \n")
+    while True:
+        right_ans = input("Letter of the right answer (A/B/C/D): \n").strip().upper()
+        if right_ans in ['A', 'B', 'C', 'D']:
+            break
+        else:
+            print("Invalid input. Please enter A, B, C, or D.")
     
-    # Make a loop to keep asking for input
-    again = input("Add another question? (yes/no): \n").strip().lower()
-    if again != 'yes':
-        print("Quiz creation completed!")
-        
     # Write the collected data into text file
     file.write("Question: " + questn + "\n")
     file.write("A. " + a + "\n")
@@ -30,3 +31,12 @@ while True:
     file.write("D. " + d + "\n")
     file.write("Answer: " + right_ans.upper() + "\n")
     file.write("\n")
+
+     # Make a loop to keep asking for input
+    again = input("Add another question? (yes/no): \n").strip().lower()
+    if again != 'yes':
+        print("Quiz creation completed!")
+        break
+
+    # Close the file once done
+    file.close()
