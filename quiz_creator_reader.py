@@ -7,6 +7,14 @@ import random
 with open("quiz_questions.txt", "r") as file:
     lines = file.readlines()
 
+# Make a list for the questions
+questions = []
+i = 0 # Line counter
+while i < len(questions):
+    #extract the questions and choices
+    if lines[i].startswith("Question:"):
+        
+
 # Get a random question on that file 
 
 
