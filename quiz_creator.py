@@ -9,10 +9,10 @@ while True:
     questn = input("\nEnter a question: \n")
 
     # Ask for user input (answer)
-    a = input("Letter 'A' value: \n")
-    b = input("Letter 'B' value: \n")
-    c = input("Letter 'C' value: \n")
-    d = input("Letter 'D' value: \n")
+    choice_a = input("Letter 'A' value: \n")
+    choice_b = input("Letter 'B' value: \n")
+    choice_c = input("Letter 'C' value: \n")
+    choice_d = input("Letter 'D' value: \n")
 
     # Ask the user for the right answer
     while True:
@@ -24,10 +24,10 @@ while True:
     
     # Write the collected data into text file
     file.write(f"Question: {questn}\n")
-    file.write(f"A. {a}\n")
-    file.write(f"B. {b}\n")
-    file.write(f"C. {c}\n")
-    file.write(f"D. {d} \n")
+    file.write(f"A. {choice_a}\n")
+    file.write(f"B. {choice_b}\n")
+    file.write(f"C. {choice_c}\n")
+    file.write(f"D. {choice_d} \n")
     file.write(f"Answer: {right_ans.upper()} \n")
     file.write("\n")
 
