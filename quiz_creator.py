@@ -28,8 +28,8 @@ while True:
     file.write(f"B. {choice_b}\n")
     file.write(f"C. {choice_c}\n")
     file.write(f"D. {choice_d} \n")
-    file.write(f"Answer: {right_ans.upper()} \n")
-    file.write("\n")
+    file.write(f"Answer: {right_ans.upper()}\n")
+    
 
      # Make a loop to keep asking for input
     again = input("Enter another question? [yes/no]: \n").strip().lower()
