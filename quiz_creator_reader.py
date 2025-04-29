@@ -19,7 +19,7 @@ while i < len(questions):
         choice_b = lines[i+2]
         choice_c = lines[i+3]
         choice_d = lines[i+4]
-        correct_answer = lines[i+5][len("Answer: "):]
+        correct_answer = lines[i+5]
 
     i += 6
 
