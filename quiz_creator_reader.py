@@ -13,7 +13,16 @@ i = 0 # Line counter
 while i < len(questions):
     #extract the questions and choices
     if lines[i].startswith("Question:"):
-        
+        # Extract the questions and answer line by line
+        question_text = lines[i]
+        choice_a = lines[i+1]
+        choice_b = lines[i+2]
+        choice_c = lines[i+3]
+        choice_d = lines[i+4]
+        correct_answer = lines[i+5][len("Answer: "):].strip()
+
+ 
+
 
 # Get a random question on that file 
 
