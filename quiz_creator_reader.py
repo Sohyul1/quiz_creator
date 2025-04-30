@@ -53,18 +53,18 @@ while True:
         if ans.upper() == current_quest[2]:  
             print(Style.BRIGHT + Fore.GREEN + "\nCorrect!")
             score += 1
-            print(Style.BRIGHT + Fore.BLACK + f"Current score: {score}")
+            print(Style.BRIGHT + Fore.GREEN + f"Current score: {score}")
         else:
             print(Style.BRIGHT + Fore.RED  + f"\nIncorrect. The correct answer is {current_quest[2]}.")
             print(Style.BRIGHT + Fore.RED + f"Current score: {score}\n")
 
     # Reveal final score
-    print(Style.BRIGHT + Fore.WHITE  + f"\nQuiz completed! Your final score: {score}/{len(questions)}")
+    print(Style.BRIGHT + Fore.MAGENTA  + f"\nQuiz completed! Your final score: {score}/{len(questions)}")
 
     # Ask if the user wants to play again, with error handling
     while True:
         try:
-            retry = input(Style.BRIGHT + Fore.BLUE + "\nWould you like to play again (yes/no)? ").strip().lower()
+            retry = input(Style.BRIGHT + Fore.CYAN + "\nWould you like to play again (yes/no)? ").strip().lower()
             if retry in ["yes", "no"]:
                 break
             else :
