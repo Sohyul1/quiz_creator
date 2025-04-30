@@ -37,9 +37,17 @@ for current_quest in questions:
         print(choices)
 
     # Enter their answer
-    ans = input("Enter your answer: ").strip().upper()
-
-# Reveal  if he got the right answer
+    while True:
+        try:
+            ans = input("Enter your answer[A/B/C/D]: ").strip().upper()
+            if ans in ["A", "B", "C", "D"]:
+                break
+            else:
+                  print("Invalid input. Please enter A, B, C, or D.") 
+        except ValueError:            
+                print("Oops! Something went wrong. Please try again.")
+    
+    # Reveal  if he got the right answer
     if ans == current_quest[2]:  
         print("Correct!\n")
         score += 1
