@@ -27,22 +27,24 @@ while i < len(lines):
 # Get a random question on that file 
 random.shuffle(questions)
 
+# Initialize the score
+score = 0
+
 # Ask the user the questions
 for current_quest in questions:
     print(current_quest[0]) # Question text
     for choices in current_quest[1]:
         print(choices)
 
-        # Enter their answer
+    # Enter their answer
     ans = input("Enter your answer: ").strip().upper()
 
 # Reveal  if he got the right answer
     if ans == current_quest[2]:  
         print("Correct!\n")
+        score += 1
     else:
         print(f"Incorrect. The correct answer is {current_quest[2]}.\n")
 
-# Repeat until tehre  are o more questions in the file
-
-
 # Reveal final score
+print(f"Quiz completed! Your final score: {score}/{len(questions)}")
