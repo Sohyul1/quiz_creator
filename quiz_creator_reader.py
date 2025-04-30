@@ -45,9 +45,9 @@ while True:
                 if ans in ["A", "B", "C", "D"]:
                     break
                 else:
-                    print("Invalid input. Please enter A, B, C, or D.") 
+                    print(Style.BRIGHT + Fore.RED + "Invalid input. Please enter A, B, C, or D.") 
             except ValueError:            
-                    print("Oops! Something went wrong. Please try again.")
+                    print(Style.BRIGHT + Fore.RED + "Oops! Something went wrong. Please try again.")
         
         # Reveal  if he got the right answer
         if ans.upper() == current_quest[2]:  
@@ -68,9 +68,9 @@ while True:
             if retry in ["yes", "no"]:
                 break
             else :
-                print("Please enter either 'yes' or 'no'")
+                print(Style.BRIGHT + Fore.RED + "Please enter either 'yes' or 'no'")
         except ValueError:
-            print("Oops! Something went wrong. Please try again.")
+            print(Style.BRIGHT + Fore.RED + "Oops! Something went wrong. Please try again.")
         
     if retry == "no":
         print("\nThank you for taking the quiz! Goodbye!")
