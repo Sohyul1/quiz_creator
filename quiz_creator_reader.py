@@ -23,38 +23,53 @@ while i < len(lines):
         # Append the lines into the list
         questions.append((question_text, [choice_a, choice_b, choice_c, choice_d], correct_answer))
     i += 6
-    
-# Get a random question on that file 
-random.shuffle(questions)
+while True:   
+    # Get a random question on that file 
+    random.shuffle(questions)
 
-# Initialize the score
-score = 0
+    # Initialize the score
+    score = 0
 
-# Ask the user the questions
-for current_quest in questions:
-    print("\n" + current_quest[0] + "\n") # Question text
-    for choices in current_quest[1]:
-        print(choices)
+    # Ask the user the questions
+    for current_quest in questions:
+        print("\n" + current_quest[0] + "\n") # Question text
+        for choices in current_quest[1]:
+            print(choices)
 
-    # Enter their answer
+        # Enter their answer
+        while True:
+            try:
+                ans = input("\nEnter your answer[A/B/C/D]: ").strip().upper()
+                if ans in ["A", "B", "C", "D"]:
+                    break
+                else:
+                    print("Invalid input. Please enter A, B, C, or D.") 
+            except ValueError:            
+                    print("Oops! Something went wrong. Please try again.")
+        
+        # Reveal  if he got the right answer
+        if ans.upper() == current_quest[2]:  
+            print("\nCorrect!")
+            score += 1
+            print(f"Current score: {score}")
+        else:
+            print(f"\nIncorrect. The correct answer is {current_quest[2]}.")
+            print(f"Current score: {score}\n")
+
+    # Reveal final score
+    print(f"\nQuiz completed! Your final score: {score}/{len(questions)}")
+
+    # Ask if the user wants to play again, with error handling
     while True:
         try:
-            ans = input("\nEnter your answer[A/B/C/D]: ").strip().upper()
-            if ans in ["A", "B", "C", "D"]:
+            retry = input("\nWould you like to play again (yes/no)? ").strip().lower()
+            if retry in ["yes", "no"]:
                 break
-            else:
-                  print("Invalid input. Please enter A, B, C, or D.") 
-        except ValueError:            
-                print("Oops! Something went wrong. Please try again.")
-    
-    # Reveal  if he got the right answer
-    if ans.upper() == current_quest[2]:  
-        print("\nCorrect!")
-        score += 1
-        print(f"Current score: {score}")
-    else:
-        print(f"\nIncorrect. The correct answer is {current_quest[2]}.")
-        print(f"Current score: {score}\n")
-
-# Reveal final score
-print(f"\nQuiz completed! Your final score: {score}/{len(questions)}")
+            else :
+                print("Please enter either 'yes' or 'no'")
+        except ValueError:
+            print("Oops! Something went wrong. Please try again.")
+        
+    if retry == "no":
+        print("\nThank you for taking the quiz! Goodbye!")
+        break
