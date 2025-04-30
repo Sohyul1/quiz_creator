@@ -1,42 +1,30 @@
-Question: gdsjh
-A. sd
-B. sdd
-C. sd
-D. sd
+Question: What is the chemical symbol for gold?
+A. Au
+B. Ag
+C. Pb
+D. Fe 
+Answer: A
+Question: Who was the first President of the Philippines?
+A. Ferdinand Marcos
+B. Manuel L. Quezon
+C. Emilio Aguinaldo
+D. jose P. Laurel 
+Answer: C
+Question: Which programming language is known for its simplicity and readability?
+A. Java
+B. C++
+C. Banjo
+D. Python 
 Answer: D
-
-Question: sajdajsdasd
-A. as
-B. 
-C. 
-D. fsdf 
-Answer: B 
-
-Question: ahha
-A. hasdh
-B. gfd
-C. tr
-D. gh 
-Answer: B 
-
-Question: how are you
-A. yes
-B. no
-C. idk
-D. idk 
-Answer: D 
-
-Question: how old are you
-A. 12
-B. 13
-C. 1
-D. 56 
-Answer: C 
-
-Question: who are you
-A. me 
-B. you
-C. your dad
-D. your mom 
-Answer: A 
-
+Question: What is the capital of Japan?
+A. Tokyo
+B. Manila
+C. Beijing
+D. Bangkok 
+Answer: A
+Question: Which instrument typically has six strings?
+A. Violib
+B. Guitar
+C. Ukulele
+D. Octavina 
+Answer: B
