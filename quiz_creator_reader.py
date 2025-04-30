@@ -28,7 +28,10 @@ while i < len(questions):
 random.shuffle(questions)
 
 # Ask the user the questions
-
+for current_quest in questions:
+    print(current_quest[0]) # Question text
+for choices in questions:
+    print(choices[1])
 
 # Reveal the right answer
 
