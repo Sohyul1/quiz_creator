@@ -10,30 +10,30 @@ with open("quiz_questions.txt", "r") as file:
     lines = file.readlines()
 
 # Make a list for the questions
-questions = []
-i = 0 # Line counter
-while i < len(lines):
+questions_and_choices = []
+line_count = 0 # Line counter
+while line_count < len(lines):
     # Extract the questions and choices
-    if lines[i].startswith("Question:"):
+    if lines[line_count].startswith("Question:"):
         # Extract the questions and answer line by line
-        question_text = lines[i].strip()
-        choice_a = lines[i+1].strip()
-        choice_b = lines[i+2].strip()
-        choice_c = lines[i+3].strip()
-        choice_d = lines[i+4].strip()
-        correct_answer = lines[i+5].strip(".").replace("Answer:", "").strip()
+        question_text = lines[line_count].strip()
+        choice_a = lines[line_count+1].strip()
+        choice_b = lines[line_count+2].strip()
+        choice_c = lines[line_count+3].strip()
+        choice_d = lines[line_count+4].strip()
+        correct_answer = lines[line_count+5].strip(".").replace("Answer:", "").strip()
         # Append the lines into the list
-        questions.append((question_text, [choice_a, choice_b, choice_c, choice_d], correct_answer))
-    i += 6
+        questions_and_choices.append((question_text, [choice_a, choice_b, choice_c, choice_d], correct_answer))
+    line_count += 6
 while True:   
     # Get a random question on that file 
-    random.shuffle(questions)
+    random.shuffle(questions_and_choices)
 
     # Initialize the score
     score = 0
 
     # Ask the user the questions
-    for current_quest in questions:
+    for current_quest in questions_and_choices:
         print(Style.BRIGHT + Fore.CYAN + "\n" + current_quest[0] + "\n") # Question text
         for choices in current_quest[1]:
             print(Style.BRIGHT + Fore.MAGENTA + choices)
@@ -59,7 +59,7 @@ while True:
             print(Style.BRIGHT + Fore.RED + f"Current score: {score}\n")
 
     # Reveal final score
-    print(Style.BRIGHT + Fore.MAGENTA  + f"\nQuiz completed! Your final score: {score}/{len(questions)}")
+    print(Style.BRIGHT + Fore.MAGENTA  + f"\nQuiz completed!\nYour final score: {score}/{len(questions_and_choices)}")
 
     # Ask if the user wants to play again, with error handling
     while True:
