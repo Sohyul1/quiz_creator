@@ -19,7 +19,7 @@ while i < len(lines):
         choice_b = lines[i+2].strip()
         choice_c = lines[i+3].strip()
         choice_d = lines[i+4].strip()
-        correct_answer = lines[i+5].strip()
+        correct_answer = lines[i+5].strip(".").replace("Answer:", "").strip()
         # Append the lines into the list
         questions.append((question_text, [choice_a, choice_b, choice_c, choice_d], correct_answer))
     i += 6
@@ -48,7 +48,7 @@ for current_quest in questions:
                 print("Oops! Something went wrong. Please try again.")
     
     # Reveal  if he got the right answer
-    if ans == current_quest[2]:  
+    if ans.upper() == current_quest[2]:  
         print("Correct!\n")
         score += 1
     else:
