@@ -33,8 +33,14 @@ for current_quest in questions:
     for choices in current_quest[1]:
         print(choices)
 
-# Reveal the right answer
+        # Enter their answer
+    ans = input("Enter your answer: ").strip().upper()
 
+# Reveal  if he got the right answer
+    if ans == current_quest[2]:  
+        print("Correct!\n")
+    else:
+        print(f"Incorrect. The correct answer is {current_quest[2]}.\n")
 
 # Repeat until tehre  are o more questions in the file
 
