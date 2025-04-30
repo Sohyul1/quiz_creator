@@ -20,14 +20,12 @@ while i < len(questions):
         choice_c = lines[i+3]
         choice_d = lines[i+4]
         correct_answer = lines[i+5]
-
+        # Append the lines into the list
+        questions.append((question_text, [choice_a, choice_b, choice_c, choice_d], correct_answer))
     i += 6
-
- 
-
-
+    
 # Get a random question on that file 
-
+random.shuffle(questions)
 
 # Ask the user the questions
 
