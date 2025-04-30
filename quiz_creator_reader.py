@@ -1,7 +1,9 @@
 # For Assignment 10: Quiz
 
-# Import random
+# Import random and colorama 
 import random
+from colorama import Fore, Back, Style, init
+init(autoreset=True)
 
 # Open the file to read
 with open("quiz_questions.txt", "r") as file:
