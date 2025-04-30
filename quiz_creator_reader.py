@@ -13,8 +13,10 @@ with open("quiz_questions.txt", "r") as file:
 questions_and_choices = []
 line_count = 0 # Line counter
 while line_count < len(lines):
+    
     # Extract the questions and choices
     if lines[line_count].startswith("Question:"):
+       
         # Extract the questions and answer line by line
         question_text = lines[line_count].strip()
         choice_a = lines[line_count+1].strip()
@@ -22,10 +24,12 @@ while line_count < len(lines):
         choice_c = lines[line_count+3].strip()
         choice_d = lines[line_count+4].strip()
         correct_answer = lines[line_count+5].strip(".").replace("Answer:", "").strip()
+        
         # Append the lines into the list
         questions_and_choices.append((question_text, [choice_a, choice_b, choice_c, choice_d], correct_answer))
     line_count += 6
 while True:   
+   
     # Get a random question on that file 
     random.shuffle(questions_and_choices)
 
@@ -36,7 +40,7 @@ while True:
     for current_quest in questions_and_choices:
         print(Style.BRIGHT + Fore.CYAN + "\n" + current_quest[0] + "\n") # Question text
         for choices in current_quest[1]:
-            print(Style.BRIGHT + Fore.MAGENTA + choices)
+            print(Style.BRIGHT + Fore.MAGENTA + choices) # Choices text
 
         # Enter their answer
         while True:
