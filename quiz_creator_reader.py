@@ -2,7 +2,7 @@
 
 # Import random and colorama 
 import random
-from colorama import Fore, Back, Style, init
+from colorama import Fore, Style, init
 init(autoreset=True)
 
 # Open the file to read
@@ -34,14 +34,14 @@ while True:
 
     # Ask the user the questions
     for current_quest in questions:
-        print("\n" + current_quest[0] + "\n") # Question text
+        print(Style.BRIGHT + Fore.CYAN + "\n" + current_quest[0] + "\n") # Question text
         for choices in current_quest[1]:
-            print(choices)
+            print(Style.BRIGHT + Fore.MAGENTA + choices)
 
         # Enter their answer
         while True:
             try:
-                ans = input("\nEnter your answer[A/B/C/D]: ").strip().upper()
+                ans = input(Style.BRIGHT + Fore.CYAN + "\nEnter your answer[A/B/C/D]: ").strip().upper()
                 if ans in ["A", "B", "C", "D"]:
                     break
                 else:
@@ -51,20 +51,20 @@ while True:
         
         # Reveal  if he got the right answer
         if ans.upper() == current_quest[2]:  
-            print("\nCorrect!")
+            print(Style.BRIGHT + Fore.GREEN + "\nCorrect!")
             score += 1
-            print(f"Current score: {score}")
+            print(Style.BRIGHT + Fore.BLACK + f"Current score: {score}")
         else:
-            print(f"\nIncorrect. The correct answer is {current_quest[2]}.")
-            print(f"Current score: {score}\n")
+            print(Style.BRIGHT + Fore.RED  + f"\nIncorrect. The correct answer is {current_quest[2]}.")
+            print(Style.BRIGHT + Fore.RED + f"Current score: {score}\n")
 
     # Reveal final score
-    print(f"\nQuiz completed! Your final score: {score}/{len(questions)}")
+    print(Style.BRIGHT + Fore.WHITE  + f"\nQuiz completed! Your final score: {score}/{len(questions)}")
 
     # Ask if the user wants to play again, with error handling
     while True:
         try:
-            retry = input("\nWould you like to play again (yes/no)? ").strip().lower()
+            retry = input(Style.BRIGHT + Fore.BLUE + "\nWould you like to play again (yes/no)? ").strip().lower()
             if retry in ["yes", "no"]:
                 break
             else :
